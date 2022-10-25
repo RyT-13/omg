@@ -1,14 +1,13 @@
-using System;
 using Enemies;
 using UnityEngine;
 using static BuildingsStats;
 
-namespace Weapons
+namespace CastleAggregate.Weapons
 {
     public class Arrow : MonoBehaviour
     {
-        private float _speed = AnyBuilding.Castle.arrowSpeed;
-        private float _damage = AnyBuilding.Castle.arrowDamage;
+        private readonly float _speed = AnyBuilding.Castle.arrowSpeed;
+        private readonly float _damage = AnyBuilding.Castle.arrowDamage;
         
         private Rigidbody2D _rb;
 
@@ -24,7 +23,8 @@ namespace Weapons
 
         private void Move()
         {
-            var moveForward = transform.position + transform.up * (_speed * Time.deltaTime);
+            var t = transform;
+            var moveForward = t.position + t.up * (_speed * Time.deltaTime);
             _rb.MovePosition(moveForward);
         }
 

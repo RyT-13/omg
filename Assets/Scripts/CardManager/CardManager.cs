@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
+using CastleAggregate.Weapons;
 using Mono.Cecil;
 using UnityEditor;
 using UnityEngine;
-using Weapons;
 using Random = UnityEngine.Random;
 
 public class CardManager : MonoBehaviour    
